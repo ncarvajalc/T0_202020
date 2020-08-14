@@ -11,7 +11,7 @@ public class TestArregloDinamico {
 
 	private ArregloDinamico arreglo;
 	private static int TAMANO=100;
-	
+
 	@Before
 	public void setUp1() {
 		arreglo= new ArregloDinamico(TAMANO);
@@ -19,19 +19,23 @@ public class TestArregloDinamico {
 
 	public void setUp2() {
 		for(int i =0; i< TAMANO*2; i++){
-			arreglo.agregar(""+i);
+			arreglo.agregar(i);
 		}
 	}
 
 	@Test
 	public void testArregloDinamico() {
-		// TODO
+		assertTrue(arreglo!= null);
+		assertEquals(0, arreglo.darTamano());
 	}
 
 	@Test
 	public void testDarElemento() {
 		setUp2();
-		// TODO
+		for(int i= 0; i <arreglo.darTamano(); i++)
+		{
+			assertEquals(Integer.valueOf(i), arreglo.darElemento(i));
+		}
 	}
 
 }
