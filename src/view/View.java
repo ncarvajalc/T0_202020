@@ -30,6 +30,12 @@ public class View
 		
 		public void printModelo(Modelo modelo)
 		{
-			// TODO implementar
+			System.out.print("[ ");
+			for(int i = 0; i < modelo.darTamano(); i++)
+			{
+				System.out.print(modelo.darElemento(i)+ " ");
+			}
+			
+			System.out.println("]");
 		}
 }
